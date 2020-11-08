@@ -1,5 +1,5 @@
 <template>
-  <v-tabs vertical>
+  <v-tabs>
     <v-tab v-for="tab in tabs" :key="tab.id">
       <v-icon left>mdi-home-city</v-icon>
       {{ tab.title }}

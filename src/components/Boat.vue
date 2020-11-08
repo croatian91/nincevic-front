@@ -37,22 +37,22 @@ export default {
       {
         from: "Departure",
         message: `blabla`,
-        time: "09:00am",
+        time: "09:00",
       },
       {
         from: "Island 1",
         message: "description...",
-        time: "10:15am",
+        time: "10:15",
       },
       {
         from: "Island 2",
         message: "description...",
-        time: "11:47am",
+        time: "11:47",
       },
       {
         from: "Arrival",
         message: "blabla",
-        time: "16:30am",
+        time: "16:30",
       },
     ],
   }),

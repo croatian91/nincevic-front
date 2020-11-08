@@ -5,15 +5,27 @@
 
       <Header />
 
-      <Accommodation id="accommodation" />
+      <div id="accommodation">
+        <SectionTitle title="Accommodation" />
+
+        <Accommodation />
+      </div>
 
       <v-divider />
 
-      <Boat id="boat" />
+      <div id="boat">
+        <SectionTitle title="Boat excursions" />
+
+        <Boat />
+      </div>
 
       <v-divider />
 
-      <Contact id="contact" />
+      <div id="contact">
+        <SectionTitle title="Contact" />
+
+        <Contact />
+      </div>
 
       <Footer />
     </v-main>
@@ -27,6 +39,7 @@ import Header from "./components/Header.vue";
 import Accommodation from "./components/Accommodation.vue";
 import Contact from "./components/Contact.vue";
 import Boat from "./components/Boat.vue";
+import SectionTitle from "./components/SectionTitle.vue";
 
 export default {
   name: "App",
@@ -38,6 +51,7 @@ export default {
     Accommodation,
     Contact,
     Boat,
+    SectionTitle,
   },
 };
 </script>
