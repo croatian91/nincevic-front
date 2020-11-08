@@ -9,6 +9,8 @@
 
       <v-divider />
 
+      <Contact id="contact" />
+
       <Footer />
     </v-main>
   </v-app>
@@ -19,6 +21,7 @@ import Footer from "./components/Footer.vue";
 import AppBar from "./components/AppBar.vue";
 import Header from "./components/Header.vue";
 import Accommodation from "./components/Accommodation.vue";
+import Contact from "./components/Contact.vue";
 
 export default {
   name: "App",
@@ -28,6 +31,7 @@ export default {
     AppBar,
     Header,
     Accommodation,
+    Contact,
   },
 };
 </script>
