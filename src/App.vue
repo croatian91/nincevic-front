@@ -9,6 +9,10 @@
 
       <v-divider />
 
+      <Boat id="boat" />
+
+      <v-divider />
+
       <Contact id="contact" />
 
       <Footer />
@@ -22,6 +26,7 @@ import AppBar from "./components/AppBar.vue";
 import Header from "./components/Header.vue";
 import Accommodation from "./components/Accommodation.vue";
 import Contact from "./components/Contact.vue";
+import Boat from "./components/Boat.vue";
 
 export default {
   name: "App",
@@ -32,6 +37,7 @@ export default {
     Header,
     Accommodation,
     Contact,
+    Boat,
   },
 };
 </script>

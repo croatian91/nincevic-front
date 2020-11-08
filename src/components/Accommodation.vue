@@ -13,7 +13,7 @@
               <Images :images="tab.images" />
             </v-col>
 
-            <v-col cols="5">
+            <v-col>
               <Calendar />
             </v-col>
           </v-row>
