@@ -26,11 +26,11 @@ export default {
     images: [
       {
         title: "abc",
-        src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
+        src: "https://picsum.photos/500/300?image=16",
       },
       {
         title: "efg",
-        src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
+        src: "https://picsum.photos/500/300?image=17",
       },
     ],
     steps: [

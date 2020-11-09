@@ -59,35 +59,35 @@ export default {
           images: [
             {
               title: "abc",
-              src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
+              src: "https://picsum.photos/500/300?image=10",
             },
             {
               title: "efg",
-              src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
+              src: "https://picsum.photos/500/300?image=15",
             },
             {
               title: "abc",
-              src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
+              src: "https://picsum.photos/500/300?image=25",
             },
             {
               title: "efg",
-              src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
+              src: "https://picsum.photos/500/300?image=30",
             },
             {
               title: "abc",
-              src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
+              src: "https://picsum.photos/500/300?image=40",
             },
             {
               title: "efg",
-              src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
+              src: "https://picsum.photos/500/300?image=50",
             },
             {
               title: "abc",
-              src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
+              src: "https://picsum.photos/500/300?image=60",
             },
             {
               title: "efg",
-              src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
+              src: "https://picsum.photos/500/300?image=70",
             },
           ],
         },
@@ -103,11 +103,11 @@ export default {
           images: [
             {
               title: "abc",
-              src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
+              src: "https://picsum.photos/500/300?image=12",
             },
             {
               title: "efg",
-              src: "https://cdn.vuetifyjs.com/images/parallax/material2.jpg",
+              src: "https://picsum.photos/500/300?image=14",
             },
           ],
         },

@@ -7,16 +7,7 @@
       />
 
       <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <span> Nincevic Sukosan </span>
+        <h3>Nincevic Sukosan</h3>
       </div>
 
       <v-spacer />
@@ -35,7 +26,10 @@
 
       <v-spacer />
 
-      <span>+385 012 3456 789</span>
+      <v-btn depressed rounded color="primary" dark>
+        <v-icon dark left> mdi-whatsapp </v-icon>
+        +385 012 3456 789
+      </v-btn>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" absolute bottom temporary>

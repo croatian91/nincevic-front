@@ -1,12 +1,6 @@
 <template>
-  <v-card-title class="title primary--text"> {{ title }} </v-card-title>
+  <v-card-title class="primary--text ml-2"> {{ title }} </v-card-title>
 </template>
-
-<style scoped>
-.title {
-  margin-left: 20px;
-}
-</style>
 
 <script>
 export default {

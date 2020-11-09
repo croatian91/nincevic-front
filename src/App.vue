@@ -13,6 +13,14 @@
 
       <v-divider />
 
+      <div id="tennis">
+        <SectionTitle title="Tennis" />
+
+        <Tennis />
+      </div>
+
+      <v-divider />
+
       <div id="boat">
         <SectionTitle title="Boat excursions" />
 
@@ -40,6 +48,7 @@ import Accommodation from "./components/Accommodation.vue";
 import Contact from "./components/Contact.vue";
 import Boat from "./components/Boat.vue";
 import SectionTitle from "./components/SectionTitle.vue";
+import Tennis from "./components/Tennis.vue";
 
 export default {
   name: "App",
@@ -52,6 +61,7 @@ export default {
     Contact,
     Boat,
     SectionTitle,
+    Tennis,
   },
 };
 </script>
