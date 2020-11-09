@@ -1,7 +1,7 @@
 <template>
   <v-carousel v-model="model" interval="2500" cycle>
-    <v-carousel-item v-for="color in colors" :key="color">
-      <v-sheet :color="color" height="100%" tile />
+    <v-carousel-item v-for="image in images" :key="image">
+      <v-img contain :src="image" />
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -11,7 +11,11 @@ export default {
   name: "Header",
   data: () => ({
     model: 0,
-    colors: ["primary", "secondary", "yellow darken-2", "red", "orange"],
+    images: [
+      "https://picsum.photos/500/300?image=16",
+      "https://picsum.photos/500/300?image=17",
+      "https://picsum.photos/500/300?image=18",
+    ],
   }),
 };
 </script>
