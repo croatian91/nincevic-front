@@ -1,5 +1,9 @@
 <template>
-  <v-card-title class="primary--text ml-2"> {{ title }} </v-card-title>
+  <v-container>
+    <v-row justify="center">
+      <h1 class="primary--text font-weight-light ml-3">{{ title }}</h1>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

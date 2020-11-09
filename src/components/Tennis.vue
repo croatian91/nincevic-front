@@ -17,7 +17,7 @@
 
     <v-row justify="center">
       <v-card-text class="text-center"> <p>description....</p> </v-card-text>
-      <v-card-title> Coaches </v-card-title>
+      <v-card-title class="font-weight-light"> Coaches </v-card-title>
     </v-row>
 
     <v-row justify="center">

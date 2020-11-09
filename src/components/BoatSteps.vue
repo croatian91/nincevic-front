@@ -1,6 +1,6 @@
 <template>
   <v-card flat>
-    <v-card-title> Visit top islands </v-card-title>
+    <v-card-title class="font-weight-regular"> Visit top islands </v-card-title>
 
     <v-card-subtitle> 6 hours of pure pleassure! </v-card-subtitle>
 
