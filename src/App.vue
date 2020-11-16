@@ -6,7 +6,7 @@
       <Header />
 
       <div id="accommodation">
-        <SectionTitle title="Accommodation" />
+        <SectionTitle :title="$t('accommodation')" />
 
         <Accommodation />
       </div>
@@ -14,7 +14,7 @@
       <v-divider />
 
       <div id="tennis">
-        <SectionTitle title="Tennis" />
+        <SectionTitle :title="$t('tennis')" />
 
         <Tennis />
       </div>
@@ -22,7 +22,7 @@
       <v-divider />
 
       <div id="boat">
-        <SectionTitle title="Boat excursions" />
+        <SectionTitle :title="$t('boat')" />
 
         <Boat />
       </div>
@@ -30,7 +30,7 @@
       <v-divider />
 
       <div id="contact">
-        <SectionTitle title="Contact" />
+        <SectionTitle :title="$t('contact')" />
 
         <Contact />
       </div>
