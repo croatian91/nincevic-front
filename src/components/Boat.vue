@@ -1,12 +1,20 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="7">
+      <v-col>
         <Images :images="images" />
       </v-col>
 
       <v-col>
-        <BoatSteps :steps="steps" />
+        <v-row justify="space-between">
+          <BoatSteps
+            v-for="(excursion, index) in excursions"
+            :key="index"
+            :title="excursion.title"
+            :subtitle="excursion.subtitle"
+            :steps="excursion.steps"
+          />
+        </v-row>
       </v-col>
     </v-row>
   </v-container>
@@ -33,26 +41,84 @@ export default {
         src: "https://picsum.photos/500/300?image=17",
       },
     ],
-    steps: [
+    excursions: [
       {
-        from: "Departure",
-        message: `blabla`,
-        time: "09:00",
+        title: "Full day",
+        subtitle: "description...",
+        steps: [
+          {
+            from: "Departure",
+            message: `blabla`,
+            time: "09:00",
+          },
+          {
+            from: "Island 1",
+            message: "description...",
+            time: "10:15",
+          },
+          {
+            from: "Island 2",
+            message: "description...",
+            time: "11:47",
+          },
+          {
+            from: "Arrival",
+            message: "blabla",
+            time: "16:30",
+          },
+        ],
       },
       {
-        from: "Island 1",
-        message: "description...",
-        time: "10:15",
+        title: "Half day",
+        subtitle: "description...",
+        steps: [
+          {
+            from: "Departure",
+            message: `blabla`,
+            time: "09:00",
+          },
+          {
+            from: "Island 1",
+            message: "description...",
+            time: "10:15",
+          },
+          {
+            from: "Island 2",
+            message: "description...",
+            time: "11:47",
+          },
+          {
+            from: "Arrival",
+            message: "blabla",
+            time: "16:30",
+          },
+        ],
       },
       {
-        from: "Island 2",
-        message: "description...",
-        time: "11:47",
-      },
-      {
-        from: "Arrival",
-        message: "blabla",
-        time: "16:30",
+        title: "Fishing",
+        subtitle: "description...",
+        steps: [
+          {
+            from: "Departure",
+            message: `blabla`,
+            time: "09:00",
+          },
+          {
+            from: "Island 1",
+            message: "description...",
+            time: "10:15",
+          },
+          {
+            from: "Island 2",
+            message: "description...",
+            time: "11:47",
+          },
+          {
+            from: "Arrival",
+            message: "blabla",
+            time: "16:30",
+          },
+        ],
       },
     ],
   }),

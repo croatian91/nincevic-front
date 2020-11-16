@@ -1,8 +1,8 @@
 <template>
   <v-card flat>
-    <v-card-title class="font-weight-regular"> Visit top islands </v-card-title>
+    <v-card-title class="font-weight-regular"> {{ title }} </v-card-title>
 
-    <v-card-subtitle> 6 hours of pure pleassure! </v-card-subtitle>
+    <v-card-subtitle> {{ subtitle }} </v-card-subtitle>
 
     <v-card-text>
       <div class="font-weight-bold ml-8 mb-2">Steps</div>
@@ -30,6 +30,14 @@
 export default {
   name: "BoatSteps",
   props: {
+    title: {
+      type: String,
+      default: "Visit top islands",
+    },
+    subtitle: {
+      type: String,
+      default: "6 hours of pure pleassure!",
+    },
     steps: {
       type: Array,
       required: true,
