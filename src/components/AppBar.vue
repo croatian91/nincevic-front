@@ -26,6 +26,8 @@
 
       <v-spacer />
 
+      <Social :items="socialNetworks" />
+
       <Language />
 
       <v-btn depressed rounded color="primary" dark>
@@ -57,10 +59,11 @@
 
 <script>
 import Language from "./Language.vue";
+import Social from "./Social.vue";
 
 export default {
   name: "AppBar",
-  components: { Language },
+  components: { Language, Social },
   data() {
     return {
       drawer: false,
@@ -70,6 +73,13 @@ export default {
         { title: "tennis", selector: "#tennis" },
         { title: "boat", selector: "#boat" },
         { title: "contact", selector: "#contact" },
+      ],
+      socialNetworks: [
+        { icon: "mdi-instagram", href: "https://www.instagram.com/croatian91" },
+        {
+          icon: "mdi-facebook",
+          href: "https://www.facebook.com/ghost.Bandit.07/",
+        },
       ],
       options: {
         duration: 1000,
