@@ -9,7 +9,7 @@
               class="d-flex transition-fast-in-fast-out primary darken-2 v-card--reveal display-3 white--text"
               style="height: 100%"
             >
-              {{ description }}
+              {{ $t(description) }}
             </div>
           </v-expand-transition>
         </v-img>
@@ -56,7 +56,7 @@ export default {
     },
     description: {
       type: String,
-      default: "No description",
+      default: "no_description",
     },
   },
   data() {
@@ -66,3 +66,17 @@ export default {
   },
 };
 </script>
+
+<i18n>
+  {
+    "en": {
+      "no_description": "No Description"
+    },
+    "de": {
+      "no_description": "Keine Beschreibung"
+    },
+    "hr": {
+      "no_description": "Bez opisa"
+    }
+  }
+</i18n>

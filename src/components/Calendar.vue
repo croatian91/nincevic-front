@@ -2,7 +2,7 @@
   <v-container>
     <v-toolbar flat>
       <v-btn outlined class="mr-4" color="grey darken-2" @click="setToday">
-        Today
+        {{ $t("today") }}
       </v-btn>
       <v-btn
         fab
@@ -61,3 +61,17 @@ export default {
   },
 };
 </script>
+
+<i18n>
+  {
+    "en": {
+      "today": "Today"
+    },
+    "de": {
+      "today": "Heute"
+    },
+    "hr": {
+      "today": "Danas"
+    }
+  }
+</i18n>

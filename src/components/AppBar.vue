@@ -21,10 +21,12 @@
         class="nav-btn d-none d-sm-block"
         @click="$vuetify.goTo(item.selector, options)"
       >
-        {{ item.title }}
+        {{ $t(item.title) }}
       </v-btn>
 
       <v-spacer />
+
+      <Language />
 
       <v-btn depressed rounded color="primary" dark>
         <v-icon dark left> mdi-whatsapp </v-icon>
@@ -54,17 +56,20 @@
 </style>
 
 <script>
+import Language from "./Language.vue";
+
 export default {
   name: "AppBar",
+  components: { Language },
   data() {
     return {
       drawer: false,
       group: null,
       sections: [
-        { title: "Accommodation", selector: "#accommodation" },
-        { title: "Tennis", selector: "#tennis" },
-        { title: "Boat excursions", selector: "#boat" },
-        { title: "Contact", selector: "#contact" },
+        { title: "accommodation", selector: "#accommodation" },
+        { title: "tennis", selector: "#tennis" },
+        { title: "boat", selector: "#boat" },
+        { title: "contact", selector: "#contact" },
       ],
       options: {
         duration: 1000,

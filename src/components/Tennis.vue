@@ -17,7 +17,10 @@
 
     <v-row justify="center">
       <v-card-text class="text-center"> <p>description....</p> </v-card-text>
-      <v-card-title class="font-weight-light"> Coaches </v-card-title>
+
+      <v-card-title class="font-weight-light">
+        {{ $t("coaches") }}
+      </v-card-title>
     </v-row>
 
     <v-row justify="center">
@@ -55,3 +58,17 @@ export default {
   },
 };
 </script>
+
+<i18n>
+  {
+    "en": {
+      "coaches": "Coaches"
+    },
+    "de": {
+      "coaches": "Trainer"
+    },
+    "hr": {
+      "coaches": "Treneri"
+    }
+  }
+</i18n>
