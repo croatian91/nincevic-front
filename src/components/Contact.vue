@@ -12,6 +12,7 @@
           <GmapMarker :position="center" />
         </GmapMap>
       </v-col>
+
       <v-col>
         <v-card flat>
           <v-list two-line>
@@ -21,21 +22,8 @@
               </v-list-item-icon>
 
               <v-list-item-content>
-                <v-list-item-title>(650) 555-1234</v-list-item-title>
+                <v-list-item-title>{{ data.phone }}</v-list-item-title>
                 <v-list-item-subtitle>Mobile</v-list-item-subtitle>
-              </v-list-item-content>
-
-              <v-list-item-icon>
-                <v-icon>mdi-message-text</v-icon>
-              </v-list-item-icon>
-            </v-list-item>
-
-            <v-list-item>
-              <v-list-item-action></v-list-item-action>
-
-              <v-list-item-content>
-                <v-list-item-title>(323) 555-6789</v-list-item-title>
-                <v-list-item-subtitle>Work</v-list-item-subtitle>
               </v-list-item-content>
 
               <v-list-item-icon>
@@ -51,17 +39,8 @@
               </v-list-item-icon>
 
               <v-list-item-content>
-                <v-list-item-title>aliconnors@example.com</v-list-item-title>
+                <v-list-item-title>{{ data.email }}</v-list-item-title>
                 <v-list-item-subtitle>Personal</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-
-            <v-list-item>
-              <v-list-item-action></v-list-item-action>
-
-              <v-list-item-content>
-                <v-list-item-title>ali_connors@example.com</v-list-item-title>
-                <v-list-item-subtitle>Work</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
 
@@ -73,8 +52,10 @@
               </v-list-item-icon>
 
               <v-list-item-content>
-                <v-list-item-title>Punta 68</v-list-item-title>
-                <v-list-item-subtitle>23206, Sukošan</v-list-item-subtitle>
+                <v-list-item-title>{{ data.line1 }}</v-list-item-title>
+                <v-list-item-subtitle>
+                  {{ data.line2 }}
+                </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
           </v-list>
@@ -87,6 +68,12 @@
 <script>
 export default {
   name: "Contact",
+  props: {
+    data: {
+      type: Object,
+      required: true,
+    },
+  },
   data: () => ({
     center: { lng: 15.302706, lat: 44.044158 },
     options: {

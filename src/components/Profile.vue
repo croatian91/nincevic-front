@@ -3,7 +3,7 @@
     <v-col>
       <v-row align="center" justify="center">
         <v-avatar :size="size">
-          <img alt="user" :src="image" />
+          <img alt="user" :height="size" :width="size" :src="image" />
         </v-avatar>
       </v-row>
 

@@ -26,13 +26,13 @@
 
       <v-spacer />
 
-      <Social :items="socialNetworks" />
+      <Social :items="$store.state.contact.social_networks" />
 
       <Language />
 
       <v-btn depressed rounded color="primary" dark>
         <v-icon dark left> mdi-whatsapp </v-icon>
-        +385 012 3456 789
+        {{ $store.state.contact.phone }}
       </v-btn>
     </v-app-bar>
 

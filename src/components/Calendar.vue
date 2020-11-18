@@ -32,7 +32,8 @@
       <v-calendar
         ref="calendar"
         v-model="focus"
-        :events="events"
+        :events="getEvents"
+        :locale="this.$i18n.locale"
         color="primary"
         type="month"
       />
@@ -54,6 +55,16 @@ export default {
       focus: "",
     };
   },
+  computed: {
+    getEvents() {
+      return this.events.map((e) => {
+        return {
+          ...e,
+          name: this.$t(e.name),
+        };
+      });
+    },
+  },
   methods: {
     setToday() {
       this.focus = "";
@@ -65,13 +76,16 @@ export default {
 <i18n>
   {
     "en": {
-      "today": "Today"
+      "today": "Today",
+      "unavailable": "Unavailable"
     },
     "de": {
-      "today": "Heute"
+      "today": "Heute",
+      "unavailable": "Nicht verfügbar"
     },
     "hr": {
-      "today": "Danas"
+      "today": "Danas",
+      "unavailable": "Nedostupno"
     }
   }
 </i18n>
