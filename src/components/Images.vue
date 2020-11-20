@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container v-if="images && images.length">
     <v-row>
       <v-hover v-slot="{ hover }">
         <v-img :width="width" :height="height" :src="images[selected]">
@@ -9,7 +9,7 @@
               class="d-flex transition-fast-in-fast-out primary darken-2 v-card--reveal display-3 white--text"
               style="height: 100%"
             >
-              {{ $t(description) }}
+              {{ description }}
             </div>
           </v-expand-transition>
         </v-img>
@@ -52,7 +52,7 @@ export default {
     },
     images: {
       type: Array,
-      required: true,
+      default: () => [],
     },
     description: {
       type: String,
@@ -66,17 +66,3 @@ export default {
   },
 };
 </script>
-
-<i18n>
-  {
-    "en": {
-      "no_description": "No Description"
-    },
-    "de": {
-      "no_description": "Keine Beschreibung"
-    },
-    "hr": {
-      "no_description": "Bez opisa"
-    }
-  }
-</i18n>

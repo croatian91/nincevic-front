@@ -1,20 +1,25 @@
 <template>
   <v-container>
     <v-row>
-      <v-col>
-        <Images :images="images" />
+      <v-col cols="7">
+        <Images :description="getDescription" :images="data.images" />
       </v-col>
 
       <v-col>
-        <v-row justify="space-between">
-          <BoatSteps
-            v-for="(excursion, index) in excursions"
-            :key="index"
-            :title="excursion.title"
-            :subtitle="excursion.subtitle"
-            :steps="excursion.steps"
-          />
-        </v-row>
+        <v-sheet class="mx-auto" max-width="350">
+          <v-slide-group multiple show-arrows>
+            <v-slide-item
+              v-for="(excursion, index) in data.excursions"
+              :key="index"
+            >
+              <BoatSteps
+                :title="getTranslated('title', excursion)"
+                :subtitle="getTranslated('subtitle', excursion)"
+                :steps="excursion.steps"
+              />
+            </v-slide-item>
+          </v-slide-group>
+        </v-sheet>
       </v-col>
     </v-row>
   </v-container>
@@ -23,6 +28,7 @@
 <script>
 import Images from "./Images.vue";
 import BoatSteps from "./BoatSteps.vue";
+import TranslateMixin from "../mixins/TranslateMixin";
 
 export default {
   name: "Boat",
@@ -30,97 +36,12 @@ export default {
     Images,
     BoatSteps,
   },
-  data: () => ({
-    images: [
-      {
-        title: "abc",
-        src: "https://picsum.photos/500/300?image=16",
-      },
-      {
-        title: "efg",
-        src: "https://picsum.photos/500/300?image=17",
-      },
-    ],
-    excursions: [
-      {
-        title: "Full day",
-        subtitle: "description...",
-        steps: [
-          {
-            from: "Departure",
-            message: `blabla`,
-            time: "09:00",
-          },
-          {
-            from: "Island 1",
-            message: "description...",
-            time: "10:15",
-          },
-          {
-            from: "Island 2",
-            message: "description...",
-            time: "11:47",
-          },
-          {
-            from: "Arrival",
-            message: "blabla",
-            time: "16:30",
-          },
-        ],
-      },
-      {
-        title: "Half day",
-        subtitle: "description...",
-        steps: [
-          {
-            from: "Departure",
-            message: `blabla`,
-            time: "09:00",
-          },
-          {
-            from: "Island 1",
-            message: "description...",
-            time: "10:15",
-          },
-          {
-            from: "Island 2",
-            message: "description...",
-            time: "11:47",
-          },
-          {
-            from: "Arrival",
-            message: "blabla",
-            time: "16:30",
-          },
-        ],
-      },
-      {
-        title: "Fishing",
-        subtitle: "description...",
-        steps: [
-          {
-            from: "Departure",
-            message: `blabla`,
-            time: "09:00",
-          },
-          {
-            from: "Island 1",
-            message: "description...",
-            time: "10:15",
-          },
-          {
-            from: "Island 2",
-            message: "description...",
-            time: "11:47",
-          },
-          {
-            from: "Arrival",
-            message: "blabla",
-            time: "16:30",
-          },
-        ],
-      },
-    ],
-  }),
+  mixins: [TranslateMixin],
+  props: {
+    data: {
+      type: Object,
+      required: true,
+    },
+  },
 };
 </script>

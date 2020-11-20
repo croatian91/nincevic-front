@@ -3,12 +3,12 @@
     <v-main>
       <AppBar />
 
-      <Header />
+      <Header :images="$store.state.header.gallery" />
 
       <div id="accommodation">
         <SectionTitle :title="$t('accommodation')" />
 
-        <Accommodation />
+        <Accommodation :data="$store.state.accommodation" />
       </div>
 
       <v-divider />
@@ -16,7 +16,7 @@
       <div id="tennis">
         <SectionTitle :title="$t('tennis')" />
 
-        <Tennis />
+        <Tennis :data="$store.state.tennis" />
       </div>
 
       <v-divider />
@@ -24,7 +24,7 @@
       <div id="boat">
         <SectionTitle :title="$t('boat')" />
 
-        <Boat />
+        <Boat :data="$store.state.boat" />
       </div>
 
       <v-divider />
@@ -32,7 +32,7 @@
       <div id="contact">
         <SectionTitle :title="$t('contact')" />
 
-        <Contact />
+        <Contact :data="$store.state.contact" />
       </div>
 
       <Footer />
@@ -52,7 +52,6 @@ import Tennis from "./components/Tennis.vue";
 
 export default {
   name: "App",
-
   components: {
     Footer,
     AppBar,
@@ -62,6 +61,15 @@ export default {
     Boat,
     SectionTitle,
     Tennis,
+  },
+  created() {
+    [
+      "bindHeader",
+      "bindAccommodation",
+      "bindContact",
+      "bindBoat",
+      "bindTennis",
+    ].map((a) => this.$store.dispatch(a));
   },
 };
 </script>

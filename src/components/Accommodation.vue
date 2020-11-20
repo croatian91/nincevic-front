@@ -1,20 +1,20 @@
 <template>
   <v-tabs>
-    <v-tab v-for="tab in tabs" :key="tab.id">
+    <v-tab v-for="(tab, index) in data.appartments" :key="index">
       <v-icon left>mdi-home-city</v-icon>
       {{ tab.title }}
     </v-tab>
 
-    <v-tab-item v-for="tab in tabs" :key="tab.id">
+    <v-tab-item v-for="(tab, index) in data.appartments" :key="index">
       <v-card flat>
         <v-container>
           <v-row>
             <v-col cols="7">
-              <Images :images="tab.images" />
+              <Images :images="tab.images" :description="getDescription" />
             </v-col>
 
             <v-col>
-              <Calendar />
+              <Calendar :events="tab.events" />
             </v-col>
           </v-row>
         </v-container>
@@ -37,6 +37,7 @@
 <script>
 import Images from "./Images.vue";
 import Calendar from "./Calendar.vue";
+import TranslateMixin from "../mixins/TranslateMixin";
 
 export default {
   name: "Accommodation",
@@ -44,75 +45,12 @@ export default {
     Images,
     Calendar,
   },
-  data() {
-    return {
-      tabs: [
-        {
-          id: 0,
-          title: "Appartment 1",
-          description: "dqd,klq,sdklqs,dqs",
-          details: [
-            { icon: "mdi-cash", title: "Price", value: 10 },
-            { icon: "mdi-account-multiple", title: "People", value: 2 },
-            { icon: "mdi-garage-variant", title: "Garage", value: true },
-          ],
-          images: [
-            {
-              title: "abc",
-              src: "https://picsum.photos/500/300?image=10",
-            },
-            {
-              title: "efg",
-              src: "https://picsum.photos/500/300?image=15",
-            },
-            {
-              title: "abc",
-              src: "https://picsum.photos/500/300?image=25",
-            },
-            {
-              title: "efg",
-              src: "https://picsum.photos/500/300?image=30",
-            },
-            {
-              title: "abc",
-              src: "https://picsum.photos/500/300?image=40",
-            },
-            {
-              title: "efg",
-              src: "https://picsum.photos/500/300?image=50",
-            },
-            {
-              title: "abc",
-              src: "https://picsum.photos/500/300?image=60",
-            },
-            {
-              title: "efg",
-              src: "https://picsum.photos/500/300?image=70",
-            },
-          ],
-        },
-        {
-          id: 1,
-          title: "Appartment 2",
-          description: "aaaaaaaaaa",
-          details: [
-            { icon: "mdi-cash", title: "Price", value: 10 },
-            { icon: "mdi-account-multiple", title: "People", value: 5 },
-            { icon: "mdi-garage-variant", title: "Garage", value: false },
-          ],
-          images: [
-            {
-              title: "abc",
-              src: "https://picsum.photos/500/300?image=12",
-            },
-            {
-              title: "efg",
-              src: "https://picsum.photos/500/300?image=14",
-            },
-          ],
-        },
-      ],
-    };
+  mixins: [TranslateMixin],
+  props: {
+    data: {
+      type: Object,
+      required: true,
+    },
   },
 };
 </script>

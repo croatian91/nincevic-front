@@ -1,13 +1,13 @@
 <template>
   <div class="social">
     <v-btn
-      v-for="(item, index) in items"
+      v-for="(link, index) in items"
       :key="index"
       icon
-      :href="item.href"
+      :href="link"
       target="_blank"
     >
-      <v-icon>{{ item.icon }}</v-icon>
+      <v-icon>{{ mapIcon(link) }}</v-icon>
     </v-btn>
   </div>
 </template>
@@ -19,6 +19,18 @@ export default {
     items: {
       type: Array,
       default: () => [],
+    },
+  },
+  methods: {
+    mapIcon(url) {
+      if (url.includes("facebook")) {
+        return "mdi-facebook";
+      }
+      if (url.includes("instagram")) {
+        return "mdi-instagram";
+      }
+
+      return "mdi-help";
     },
   },
 };

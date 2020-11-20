@@ -4,7 +4,7 @@
 
     <v-card-subtitle> {{ subtitle }} </v-card-subtitle>
 
-    <v-card-text>
+    <v-card-text v-if="steps && steps.length">
       <div class="font-weight-bold ml-8 mb-2">Steps</div>
 
       <v-timeline align-top dense>
@@ -18,7 +18,7 @@
             <div class="font-weight-normal">
               <strong>{{ step.from }}</strong> @{{ step.time }}
             </div>
-            <div>{{ step.message }}</div>
+            <div>{{ getTranslated("description", step) }}</div>
           </div>
         </v-timeline-item>
       </v-timeline>
@@ -27,8 +27,11 @@
 </template>
 
 <script>
+import TranslateMixin from "../mixins/TranslateMixin";
+
 export default {
   name: "BoatSteps",
+  mixins: [TranslateMixin],
   props: {
     title: {
       type: String,

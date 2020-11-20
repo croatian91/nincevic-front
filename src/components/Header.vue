@@ -9,13 +9,14 @@
 <script>
 export default {
   name: "Header",
+  props: {
+    images: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data: () => ({
     model: 0,
-    images: [
-      "https://picsum.photos/500/300?image=16",
-      "https://picsum.photos/500/300?image=17",
-      "https://picsum.photos/500/300?image=18",
-    ],
   }),
 };
 </script>
